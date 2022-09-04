@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*  change ptmono globaly to oxygen font please  */
+@font-face {
+  font-family: "ptmono";
+  src: local("ptmono"),
+   url(~assets/oxygen.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "chedder";
+  src: local("cedder"),
+   url(~assets/chedder.ttf) format("truetype");
+}
+
+html {
+  /* @apply overscroll-none overflow-hidden; */
+}
+
+
+/* .container {
+  @apply max-w-7xl flex flex-col mx-auto pt-10 px-4 md:px-8 lg:px-10;
+}
+button {
+  @apply uppercase border-4 py-2;
+}
+.button-1 {
+  @apply border-primary text-primary bg-secondary;
+} */
+
+/* spinner  */
+.fulfilling-bouncing-circle-spinner, .fulfilling-bouncing-circle-spinner * {
+  box-sizing: border-box;
+}
+
+.fulfilling-bouncing-circle-spinner {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  animation: fulfilling-bouncing-circle-spinner-animation infinite 4000ms ease;
+}
+
+.fulfilling-bouncing-circle-spinner .orbit {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  border: calc(60px * 0.03) solid #C10609;
+  animation: fulfilling-bouncing-circle-spinner-orbit-animation infinite 4000ms ease;
+}
+
+.fulfilling-bouncing-circle-spinner .circle {
+  height: 60px;
+  width: 60px;
+  color: #C10609;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  border: calc(60px * 0.1) solid #C10609;
+  animation: fulfilling-bouncing-circle-spinner-circle-animation infinite 4000ms ease;
+  transform: rotate(0deg) scale(1);
+}
+
+@keyframes fulfilling-bouncing-circle-spinner-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fulfilling-bouncing-circle-spinner-orbit-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  62.5% {
+    transform: scale(0.8);
+  }
+  75% {
+    transform: scale(1);
+  }
+  87.5% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fulfilling-bouncing-circle-spinner-circle-animation {
+  0% {
+    transform: scale(1);
+    border-color: transparent;
+    border-top-color: inherit;
+  }
+  16.7% {
+    border-color: transparent;
+    border-top-color: initial;
+    border-right-color: initial;
+  }
+  33.4% {
+    border-color: transparent;
+    border-top-color: inherit;
+    border-right-color: inherit;
+    border-bottom-color: inherit;
+  }
+  50% {
+    border-color: inherit;
+    transform: scale(1);
+  }
+  62.5% {
+    border-color: inherit;
+    transform: scale(1.4);
+  }
+  75% {
+    border-color: inherit;
+    transform: scale(1);
+    opacity: 1;
+  }
+  87.5% {
+    border-color: inherit;
+    transform: scale(1.4);
+  }
+  100% {
+    border-color: transparent;
+    border-top-color: inherit;
+    transform: scale(1);
+  }
+}
+/* font size  */
+
+h1, h2 {
+  font-size: 48px;
+}
+.btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.3em;
+  box-sizing: border-box;
+  background-color: transparent;
+  font-size: 0.9em;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  padding: 0.75em;
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin: 0;
+  border: 1px solid #41b883;
+  background-color: #41b883;
+  color: #fff;
+  min-width: 0;
+  width: auto;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* global styles are snake_case and scoped in components are kebeb-case */
+/* stylelint-disable */
+html, body {
+  height: 100%;
+}
+
+/* typography */
+/* stylelint-disable */
+p, li {
+  font-family: "ptmono";
+}
+
+
+h1,h2,h3,h4,h5,h6{
+  font-family: "chedder";
+}
+
+.chedder {
+  font-family: "chedder"
+}
+
+.chedder {
+  font-family: "chedder";
+}
+
+.ptmono {
+  font-family: 'ptmono'
+}
+
+
+/* color schema */
+/* stylelint-disable */
+
+.main_red_text {
+  color: #C10609;
+}
+
+.main_white_text {
+  color: white;
+}
+
+.main_red_background {
+  background: #C10609;
+}
+
+/* main padding and margins */
+/* stylelint-disable */
+
+.main_page_padding_left_right {
+  padding-left: 37px;
+  padding-right: 37px;
+}
+
+.content_padding {
+  padding-left: 64px;
+  padding-right: 64px;
+}
+
+.grid_half {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+/* flex utility classes */
+/* stylelint-disable */
+
+.flex_row {
+  display: flex;
+}
+
+.flex_center {
+  justify-content: center;
+}
+
+.flex_align_center {
+  align-items: center;
+}
+
+.width_full {
+  width: 100%;
+}
+
+/* icon padding */
+
+.icon_margin_left {
+  margin-left: 16px;
+}
+
+.icon_margin_right {
+  margin-right: 16px;
+}
+
+.flex_end_row {
+  justify-content: flex-end;
+}
+
+.link_no_style {
+  text-decoration: none;
+}
+
+/* mobile global css */
+/* stylelint-disable */
+.mobile_display {
+  display: block;
+}
+@media (max-width: 360px) {
+  .mobile_display {
+      display: none;
+  }
+}
